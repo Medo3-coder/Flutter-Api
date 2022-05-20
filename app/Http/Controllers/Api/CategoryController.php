@@ -34,6 +34,7 @@ class CategoryController extends Controller
      */
     public function store(StoreCategoryRequest $request)
     {
+         //Automatically Adding User ID to New Records
        $category =  auth()->user()->categories()->create($request->validated());
         // return new categoryResource(Category::create($request->validated() + ['user_id'=>auth()->id]));
         // return new categoryResource(Category::create($request->validated()));
@@ -46,15 +47,11 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Category $category)
     {
-        $category = Category::find($id);
-        if(!$category)
-        {
-            abort(404 , 'Category not found');
-        }
         return new CategoryResource($category);
     }
+
 
     /**
      * Update the specified resource in storage.

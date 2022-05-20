@@ -29,6 +29,7 @@ class TrasnactController extends Controller
      */
     public function store(StoreTransactionRequest $request)
     {
+        //Automatically Adding User ID to New Records
         $transact = auth()->user()->transactions()->create($request->validated());
         // return new TransactionResource(Transact::create($request->validated()));
         return  new TransactionResource($transact);
