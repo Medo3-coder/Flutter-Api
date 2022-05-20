@@ -10,7 +10,7 @@ use Illuminate\Support\Carbon;
 class Transact extends Model
 {
     use HasFactory;
-    protected $fillable = ['category_id', 'transaction_date', 'amount', 'description'];
+    protected $fillable = ['category_id', 'transaction_date', 'amount', 'description' , 'user_id']  ;
 
     protected $dates = ['transaction_date'];
 
