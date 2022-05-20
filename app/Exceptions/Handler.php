@@ -33,9 +33,9 @@ class Handler extends ExceptionHandler
      */
     public function register()
     {
-        $this->renderable(function(NotFoundHttpException $e){
-         // this how custom global error message can be shown for all 404 http exceptions
-            return response()->json(['message' => 'Object Not Found'], 404);
-        });
+        // $this->renderable(function(NotFoundHttpException $e){
+        //  // this how custom global error message can be shown for all 404 http exceptions
+        //     return response()->json(['message' => 'Object Not Found'], 404);
+        // });
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTrasnactionsTable extends Migration
+class CreateTransactsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateTrasnactionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('trasnactions', function (Blueprint $table) {
+        Schema::create('transacts', function (Blueprint $table) {
             $table->id();
             $table->foreignId('category_id')->constrained();
             $table->date('transaction_date');
@@ -30,6 +30,6 @@ class CreateTrasnactionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('trasnactions');
+        Schema::dropIfExists('transacts');
     }
 }

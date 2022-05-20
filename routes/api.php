@@ -23,5 +23,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::resource('categories', \App\Http\Controllers\Api\CategoryController::class);
 
 
-Route::resource('transaction', \App\Http\Controllers\Api\TrasnactionController::class);
+Route::resource('transact', \App\Http\Controllers\Api\TrasnactController::class);
 
